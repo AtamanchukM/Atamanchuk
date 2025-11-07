@@ -3,11 +3,10 @@ import Navbar from './UI/Navbar';
 import MobileMenu from './UI/MobileMenu'
 import LoadingScreenAnimation from './UI/LoadingScreenAnimation';
 import Home from './sections/Home';
-import AnimationWaves from './UI/AnimationWawes';
 import About from './sections/About';
+import Services from './sections/Services';
 import Project from './sections/project';
 import Contact from './sections/contact';
-import RevealOnScroll from './UI/RevealOnScroll';
 import Footer from './sections/Footer';
 
 
@@ -16,14 +15,12 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <>
-      {!isLoading && (<LoadingScreenAnimation onComplete={() => setIsLoading(true)} />)}
-      <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {/* {!isLoading && (<LoadingScreenAnimation onComplete={() => setIsLoading(true)} />)} */}
+      {/* <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> */}
       <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <RevealOnScroll>
-        <Home />
-        <AnimationWaves />
-      </RevealOnScroll>
+      <Home />
       <About />
+      <Services />
       <Project />
       <Contact />
       <Footer />

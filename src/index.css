@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #1c0D30;
-  color: #f3f4f6;
   scroll-behavior: smooth;
 }
 
@@ -53,4 +52,52 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.ul_steps li::before {
+  position: absolute;
+  content: "";
+  background-color: #D4C4A8;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 25%;
+  transition: all 0.3s ease-in-out;
+}
+
+.ul_steps li:hover::before {
+  width: 100%;
+}
+
+.navigation li {
+  position: relative;
+}
+
+.navigation li::before {
+  position: absolute;
+  content: "";
+  background-color: #D4C4A8;
+  bottom: 0;
+  left: 0;
+
+  height: 3px;
+  width: 5%;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation li:hover::before {
+  width: 100%;
+  transform: translateX(0%);
+
+}
+
+footer .navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0;
+}
+
+footer .navigation li::before {
+  display: none;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import '../index.css'
 
-export default function LoadingScreenAnimation({ onComplete }) {
+export default function LoadingScreenAnimation({ onComplete }: any) {
 
     const [text, setText] = useState('');
 
