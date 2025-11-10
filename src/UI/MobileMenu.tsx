@@ -4,7 +4,7 @@ import { FadeLeftSection } from './FramerAnimation';
 
 export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: any) {
     return (
-        <div className={`fixed right-0 bg-white text-black
+        <div className={`fixed right-0 bg-white dark:bg-second-dark-bg text-black
          z-40  flex-col items-center justify-center  gap-15 transition-all duration-300
          ${isMenuOpen
                 ? 'h-screen  translate-x-0  w-[70vw] opacity-100 pointer-events-auto '

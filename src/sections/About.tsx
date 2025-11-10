@@ -4,7 +4,7 @@ export default function About() {
         'Html', 'CSS', 'JS', 'React', 'TypeScript', 'Vite', 'React Router', 'Zustand', 'Responsive Development', 'SCSS', 'Tailwind'
     ]
     return (
-        <section id='about' className='min-h-screen  flex justify-center  pt-30 pb-10 bg-[#F5F5F5]'>
+        <section id='about' className='min-h-screen   flex justify-center  pt-30 pb-10 bg-[#F5F5F5] dark:bg-second-dark-bg dark:text-text-dark'>
             <FadeInSection>
 
                 <div className=" mx-auto px-4 max-w-7xl flex   flex-col lg:flex-row">
@@ -22,7 +22,7 @@ export default function About() {
                                 <ul className='flex flex-wrap gap-3'>
 
                                     {skills.map((skill, index) => (
-                                        <li key={index} className='bg-white px-5 py-2 text-sm'>{skill}</li>
+                                        <li key={index} className='bg-white dark:bg-card px-5 py-2 text-sm'>{skill}</li>
                                     ))}
 
                                 </ul>
@@ -30,9 +30,9 @@ export default function About() {
 
                         </div>
                     </div>
-                    <div className="w-full lg:max-w-[400px] p-10 border-l-6 mt-5 border-[#D4C4A8] h-fit bg-white space-y-4 flex flex-col ">
+                    <div className="w-full lg:max-w-[400px] p-10 border-l-6 mt-5 border-[#D4C4A8] dark:border-border-dark h-fit bg-white dark:bg-card space-y-4 flex flex-col ">
                         <blockquote className='text-2xl italic'>My purpose is to build solutions that offer dynamic UI, high performance and delightful UX.</blockquote>
-                        <div className="text-right text-black/50 text-sm">— Development Philosophy</div>
+                        <div className="text-right text-black/50 dark:text-text-dark/50 text-sm">— Development Philosophy</div>
                     </div>
                 </div>
             </FadeInSection>

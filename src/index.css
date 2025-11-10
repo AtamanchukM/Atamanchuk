@@ -1,4 +1,17 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-dark-bg: #0f0f10;
+  --color-second-dark-bg: #1a1a1b;
+  --color-text-dark: #e5e5e5;
+  --color-border-dark: #2e2e32;
+  --color-card: #17181b;
+  /* --color-light: #ffffff; */
+
+}
 
 
 html,
@@ -7,7 +20,18 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+ body.dark{
+  background-color: var(--color-dark-bg);
+}
+
+
+.dark ul li::before{
+  background-color: var(--color-border-dark);
+}
+
 
 @layer utilities {
   @keyframes loading {
@@ -70,6 +94,11 @@ body {
   width: 25%;
   transition: all 0.3s ease-in-out;
 }
+
+/* .ul_steps>li::before {
+  background-color: var(--color-border-dark);
+} */
+
 
 .ul_steps li:hover::before {
   width: 100%;

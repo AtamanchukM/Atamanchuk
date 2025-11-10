@@ -6,6 +6,6 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-  plugins: [react(), tailwindcss(),],
-  base: '/res.github.io/',
+  plugins: [react(), tailwindcss()],
+  base: '/Atamanchuk/',
 })

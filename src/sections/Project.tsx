@@ -43,15 +43,15 @@ export default function Project() {
 
     const [openIndex, setOpenIndex] = useState<number | null>(null)
     return (
-        <section id='project' className='min-h-screen flex  flex-col items-center  pt-30'>
+        <section id='project' className='min-h-screen dark:bg-second-dark-bg dark:text-text-dark  flex  flex-col items-center  pt-30'>
             <FadeInSection>
 
                 <div className="max-w-7xl px-4 flex flex-col items-center">
                     <h2 className='text-5xl text-center'>Selected Work</h2>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center mt-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center mt-20">
                         {project.map((item, index) => (
                             <FadeRightSection key={index}>
-                                <li
+                                <div
                                     className={`group relative overflow-hidden border border-[#D4C4A8] ${index % 4 === 0 || index % 4 === 3 ? 'h-[400px]' : 'h-[300px]'}`}
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 >
@@ -79,10 +79,10 @@ export default function Project() {
                                             View On Github
                                         </a>
                                     </div>
-                                </li>
+                                </div>
                             </FadeRightSection>
                         ))}
-                    </ul>
+                    </div>
 
                     {/* <button className="border-2 border-black font-bold  w-fit flex justify-center mt-20 px-12  py-4">View all projects</button> */}
 

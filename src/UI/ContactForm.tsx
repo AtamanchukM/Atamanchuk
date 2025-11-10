@@ -70,52 +70,54 @@ export default function ContactForm() {
     return (
 
 
-        <form onSubmit={handleSubmit} className="w-full max-w-lg  mx-4">
-            {/* Name */}
+        <form onSubmit={handleSubmit} className="w-full max-w-lg  mx-4" id="contact-form" name="contact-form">
             <FadeRightSection>
                 <div className="mt-8">
-                    <label className="block font-medium mb-1 text-black">Name</label>
+                    <label htmlFor="name" className="block font-medium mb-1 text-black">Name</label>
                     <input
+                        id="name"
                         type="text"
                         placeholder="Your full name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        autoComplete="name"
                         className="w-full border-b border-gray-300 focus:border-black outline-none py-2 placeholder-gray-400"
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
 
-                {/* Email */}
                 <div className="mt-8">
-                    <label className="block font-medium mb-1 text-black">Email</label>
+                    <label htmlFor="email" className="block font-medium mb-1 text-black">Email</label>
                     <input
+                        id="email"
                         type="email"
                         placeholder="your.email@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        autoComplete="email"
                         className="w-full border-b border-gray-300 focus:border-black outline-none py-2 placeholder-gray-400"
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
 
-                {/* Message */}
                 <div className="mt-8">
-                    <label className="block font-medium mb-1 text-black">Message</label>
+                    <label htmlFor="message" className="block font-medium mb-1 text-black">Message</label>
                     <textarea
+                        id="message"
                         placeholder="Tell me about your project..."
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        autoComplete="off"
                         className="w-full border-b border-gray-300 focus:border-black outline-none py-2 placeholder-gray-400"
                     />
                     {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
 
-                {/* Submit */}
                 <button
                     type="submit"
                     disabled={isSending}
-                    className={`w-full cursor-pointer bg-black text-white py-3 font-semibold tracking-wide transition duration-300 ${isSending ? "opacity-70" : "hover:bg-[#D4C4A8]"
+                    className={`w-full cursor-pointer bg-second-dark-bg text-white py-3 font-semibold tracking-wide transition duration-300 ${isSending ? "opacity-70" : "hover:bg-[#D4C4A8]"
                         }`}
                 >
                     {isSending ? "Sending..." : "SEND MESSAGE"}

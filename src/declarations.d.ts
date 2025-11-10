@@ -4,3 +4,5 @@ declare module '*.png';
 declare module '*.svg';
 declare module '*.gif';
 declare module '*.webp';
+declare module '*.pdf';
+declare module '*.css';
