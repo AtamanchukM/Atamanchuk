@@ -2,15 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Frontend Developer Portfolio">
-    <meta name="description" content="Atamanchuk Maksym - Frontend Developer Portfolio">
-    <meta name="keywords" content="Frontend, developer, React, TypeScript, Atamanchuk, Design">
-    <title>Atamanchuk</title>
-    <script type="module" crossorigin src="/Atamanchuk/assets/index-v3E__9c8.js"></script>
-    <link rel="stylesheet" crossorigin href="/Atamanchuk/assets/index-SptYCcj5.css">
+    <title>Maksym Atamanchuk - Frontend Developer</title>
+    
+    <!-- Обробка редіректу з 404.html для GitHub Pages -->
+    <script>
+      (function() {
+        const redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          const path = redirect.replace('/Atamanchuk', '');
+          history.replaceState(null, null, '/Atamanchuk' + path);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/Atamanchuk/assets/index-Djyi3_py.js"></script>
+    <link rel="stylesheet" crossorigin href="/Atamanchuk/assets/index-BtpsTW4h.css">
   </head>
-  <body >
+  <body>
     <div id="root"></div>
   </body>
 </html>
