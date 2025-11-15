@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { CiSun } from "react-icons/ci";
+import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 // localStorage.theme === "dark" ||
 //     (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
@@ -30,13 +30,13 @@ export default function ThemeToggle() {
     };
 
     return (
-        <div className="dark_mode flex justify-center items-center px-4">
+        <div className=" dark:text-text-dark flex justify-center items-center max-w-5 w-full max-h-5 h-full ">
             <button
                 id="darktheme-toggle"
-                className="dark_theme_input cursor-pointer"
+                className="dark_theme_input cursor-pointer text-lg  md:text-sm lg:text-lg"
                 onClick={toggleTheme}
                 aria-label="Toggle Dark Mode" >
-                {darkTheme ? <FaMoon className="  text-xl md:pb-1  "/> : <CiSun className="text-3xl md:pb-1" />}
+                {darkTheme ? <FaMoon className="    "/> : <FaSun className=" " />}
             </button>
 
         </div>

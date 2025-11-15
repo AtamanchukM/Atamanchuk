@@ -17,10 +17,10 @@ export default function LangSwitch() {
   };
 
   return (
-    <div className="flex items-center gap-2 border-l pl-4 ml-4">
+    <div className="flex items-center md:gap-2 px-2  lg:pl-4 pr-4 ">
       <button
         onClick={() => changeLanguage('en')}
-        className={`px-3 py-1 text-sm font-medium transition-colors duration-200 ${
+        className={`lg:px-3 px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
           i18n.language === 'en'
             ? 'text-[#D4C4A8] font-bold'
             : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white'
@@ -29,10 +29,10 @@ export default function LangSwitch() {
       >
         EN
       </button>
-      <span className="text-gray-300 dark:text-gray-600">|</span>
+      <span className="text-gray-300 dark:text-gray-600 ">|</span>
       <button
         onClick={() => changeLanguage('ua')}
-        className={`px-3 py-1 text-sm font-medium transition-colors duration-200 ${
+        className={`lg:px-3 px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
           i18n.language === 'ua'
             ? 'text-[#D4C4A8] font-bold'
             : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white'
