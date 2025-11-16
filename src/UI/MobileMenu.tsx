@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { RxCross1 } from "react-icons/rx";
 import { FadeLeftSection } from './FramerAnimation';
 import { useTranslation } from 'react-i18next';
@@ -7,13 +7,31 @@ import ThemeToggle from './ThemeToggle';
 
 export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: any) {
     const { t } = useTranslation();
+    const menuRef = useRef<HTMLDivElement>(null);
+    
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node) && isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMenuOpen, setIsMenuOpen]);
     
     return (
         <div className={`fixed right-0 bg-white/80 dark:bg-second-dark-bg/80 backdrop-blur-sm text-black
          z-40  flex-col items-center justify-center  gap-15 transition-all duration-300
          ${isMenuOpen
                 ? 'h-screen  translate-x-0  w-[50vw] opacity-100 pointer-events-auto '
-                : 'h-screen   translate-x-50  opacity-0 pointer-events-none'} `}>
+                : 'h-screen   translate-x-50 w-[50vw] opacity-0 pointer-events-none'} `}
+         ref={menuRef}>
 
           <div className="flex justify-between items-center w-full px-7 pt-7">
               <button onClick={() => setIsMenuOpen(false)}

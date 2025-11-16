@@ -13,11 +13,8 @@ import Footer from './sections/Footer';
 import './index.css'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('light')
 
-  const { t } = useTranslation();
 
   return (
     <>

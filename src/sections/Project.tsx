@@ -44,7 +44,7 @@ export default function Project() {
     const [openIndex, setOpenIndex] = useState<number | null>(null)
     
     return (
-        <section id='project' className='min-h-screen dark:bg-second-dark-bg dark:text-text-dark  flex  flex-col items-center  pt-30'>
+        <section id='project' className='min-h-screen dark:bg-second-dark-bg dark:text-text-dark  flex  flex-col items-center  pt-30 pb-20'>
             <FadeInSection>
 
                 <div className="max-w-7xl px-4 flex flex-col items-center">

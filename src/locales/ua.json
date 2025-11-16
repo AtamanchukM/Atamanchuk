@@ -79,7 +79,7 @@
       "emailPlaceholder": "your.email@example.com",
       "emailError": "Будь ласка, введіть дійсну email адресу",
       "messageLabel": "Повідомлення",
-      "messagePlaceholder": "Розкажіть мені про ваш проєкт...",
+      "messagePlaceholder": "Напишіть мені...",
       "messageError": "Будь ласка, введіть повідомлення",
       "sending": "Відправка...",
       "send": "ВІДПРАВИТИ ПОВІДОМЛЕННЯ",

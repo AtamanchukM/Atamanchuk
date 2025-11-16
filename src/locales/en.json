@@ -79,7 +79,7 @@
       "emailPlaceholder": "your.email@example.com",
       "emailError": "Please enter a valid email address",
       "messageLabel": "Message",
-      "messagePlaceholder": "Tell me about your project...",
+      "messagePlaceholder": "Tell me about...",
       "messageError": "Please enter a message",
       "sending": "Sending...",
       "send": "SEND MESSAGE",
