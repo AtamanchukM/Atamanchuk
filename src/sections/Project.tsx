@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import motionPortfolio from "../assets/motionPortfolio.png";
 import myPortfolio from "../assets/myPortfolio.png";
 import booxExchange from "../assets/bookExchange.png";
-import { FadeInSection, FadeRightSection } from "../UI/FramerAnimation";
+import {
+  FadeInSection,
+  FadeLeftSection,
+  FadeRightSection,
+} from "../UI/FramerAnimation";
 
 export default function Project() {
   const { t } = useTranslation();
@@ -35,15 +39,18 @@ export default function Project() {
   return (
     <section
       id="project"
-      className="flex flex-col items-center w-full min-h-screen py-20 m-auto max-w-7xl dark:bg-second-dark-bg dark:text-text-dark "
+      className="flex flex-col items-center w-full min-h-screen px-4 py-20 mx-auto overflow-x-hidden max-w-7xl dark:text-text-dark "
     >
       <FadeInSection>
-        <div className="w-full mx-auto ">
-          <h2 className="mb-20 text-5xl text-center">{t("projects.title")}</h2>
+        <h2 className="mb-20 text-5xl text-center">{t("projects.title")}</h2>
 
-          <div className="flex flex-col gap-10">
-            {project.map((item, index) => (
-              <FadeRightSection key={index}>
+        <div className="flex flex-col gap-10">
+          {project.map((item, index) => {
+            const AnimationWrapper =
+              index % 2 === 0 ? FadeLeftSection : FadeRightSection;
+
+            return (
+              <AnimationWrapper key={index}>
                 <div
                   className={`flex flex-col ${
                     index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
@@ -59,14 +66,15 @@ export default function Project() {
                     </div>
                   </div>
 
-                  {/* Text Content */}
-                  <div className="flex flex-col justify-center flex-1 gap-4">
-                    <h3 className="text-3xl font-bold">{item.name}</h3>
-                    <p className="text-lg text-gray-300">{item.brief}</p>
+                  <div className="flex flex-col justify-between flex-1 gap-8 mb-8">
+                    <div className="">
+                      <h3 className="text-3xl font-bold">{item.name}</h3>
+                      <p className="text-lg text-gray-300">{item.brief}</p>
+                    </div>
                     <div className="flex gap-4">
                       <a
                         href={item.repoLink}
-                        className="px-6 py-2 bg-[#D4C4A8] text-black font-bold rounded hover:shadow-lg transition"
+                        className="px-6 py-2 bg-[#D4C4A8] text-black font-bold rounded hover:shadow-lg transition flex justify-center items-center"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -75,7 +83,7 @@ export default function Project() {
                       {item.visitSite && (
                         <a
                           href={item.visitSite}
-                          className="px-6 py-2 border-2 border-[#D4C4A8] text-[#D4C4A8] font-bold rounded hover:bg-[#D4C4A8] hover:text-black transition"
+                          className="px-6 py-2 border-2 border-[#D4C4A8] text-[#D4C4A8] font-bold rounded hover:bg-[#D4C4A8] hover:text-black transition flex justify-center items-center"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -85,9 +93,9 @@ export default function Project() {
                     </div>
                   </div>
                 </div>
-              </FadeRightSection>
-            ))}
-          </div>
+              </AnimationWrapper>
+            );
+          })}
         </div>
       </FadeInSection>
     </section>

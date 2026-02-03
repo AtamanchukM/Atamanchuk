@@ -17,7 +17,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex justify-center dark:bg-dark-bg dark:text-text-dark py-15"
+      className="flex justify-center overflow-x-hidden dark:bg-dark-bg dark:text-text-dark py-15"
     >
       <div className="flex flex-col items-center justify-between w-full px-4 max-w-7xl">
         <FadeInSection>

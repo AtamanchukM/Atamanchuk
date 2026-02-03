@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
-import "./ThemeToggle.css";
+import "../styles/ThemeToggle.css";
 
 export default function ThemeToggle() {
   const savedDarkTheme = localStorage.getItem("darkTheme") === "true";

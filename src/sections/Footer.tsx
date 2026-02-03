@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="dark:bg-second-dark-bg   pt-20 pb-10 bg-[#F5F5F5] dark:text-text-dark"
+      className="dark:bg-second-dark-bg   pt-20 pb-10 bg-[#F5F5F5] dark:text-text-dark overflow-x-hidden"
     >
       <FadeInSection>
         <div className="flex flex-col items-center">

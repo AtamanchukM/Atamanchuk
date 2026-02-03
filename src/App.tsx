@@ -9,7 +9,7 @@ import Project from "./sections/Project";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 
-import "./index.css";
+import "./styles/index.css";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

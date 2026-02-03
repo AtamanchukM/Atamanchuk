@@ -1,11 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import Router from './router/Router'
-import './lang/i18n'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import Router from "./router/Router";
+import "./lang/i18n";
+import "./styles/index.css";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Router />
   </StrictMode>,
-)
+);
