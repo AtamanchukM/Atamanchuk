@@ -45,21 +45,22 @@
     "title": "Selected Work",
     "viewOnGithub": "View On Github",
     "visitSite": "Visit Site",
-    "project1": {
+    "motionPortfolio": {
       "name": "Motion Portfolio",
       "brief": "Simple Portfolio with React + Vite + TailwindCSS + Framer Motion + React Intersection Observer"
     },
-    "project2": {
-      "name": "Penutrition",
-      "brief": "Penutrition — a web application that calculates personalized daily calorie needs based on user data and fitness goals, offering tailored meal recommendations and progress tracking."
-    },
-    "project3": {
+
+    "myPortfolio": {
       "name": "My Portfolio",
       "brief": "This application. You can see code on github"
     },
-    "project4": {
-      "name": "Todo App",
-      "brief": "Simple Todo App with React + Vite + TailwindCSS + Firebase, with authentication and realtime database"
+    "nativeShop": {
+      "name": "Native Shop",
+      "brief": "Mobile shopping app built with React Native and Expo for fast, seamless cross-platform experiences."
+    },
+    "booxExchange": {
+      "name": "Boox Exchange",
+      "brief": "A platform for book exchange between users. The site was developed for skill training. Implemented - Authorization, book catalog, search, filters, book exchange, personal account, email sending."
     }
   },
   "contact": {

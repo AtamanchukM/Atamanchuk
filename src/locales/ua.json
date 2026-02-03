@@ -45,21 +45,22 @@
     "title": "Вибрані Роботи",
     "viewOnGithub": "Переглянути на Github",
     "visitSite": "Відвідати сайт",
-    "project1": {
+    "motionPortfolio": {
       "name": "Motion Portfolio",
       "brief": "Просте портфоліо з React + Vite + TailwindCSS + Framer Motion + React Intersection Observer"
     },
-    "project2": {
-      "name": "Penutrition",
-      "brief": "Penutrition — веб-додаток, який розраховує персоналізовані денні потреби в калоріях на основі даних користувача та фітнес-цілей, пропонуючи індивідуальні рекомендації щодо харчування та відстеження прогресу."
-    },
-    "project3": {
+
+    "myPortfolio": {
       "name": "Моє Портфоліо",
       "brief": "Цей додаток. Ви можете переглянути код на github"
     },
-    "project4": {
-      "name": "Todo Додаток",
-      "brief": "Простий Todo додаток з React + Vite + TailwindCSS + Firebase, з автентифікацією та базою даних реального часу"
+    "nativeShop": {
+      "name": "Native Shop",
+      "brief": "Мобільний додаток для покупок, створений з React Native та Expo для швидкого та безшовного кросплатформенного досвіду."
+    },
+    "booxExchange": {
+      "name": "Boox Exchange",
+      "brief": "Платформа для обміну книгами між користувачами. Сайт розроблявся для тренінгу навичок. Реалізовано - Авторизація, каталог книг, пошук, фільтри, обмін книгами, особистий кабінет, відправка email."
     }
   },
   "contact": {

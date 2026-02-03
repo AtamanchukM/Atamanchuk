@@ -1,99 +1,95 @@
-import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import motionPortfolio from '../assets/motionPorfolio.png'
-import penutrition from '../assets/penutrition.png'
-import myPortfolio from '../assets/myPortfolio.png'
-import todo from '../assets/todo.png'
-import { FadeInSection, FadeLeftSection, FadeRightSection } from '../UI/FramerAnimation'
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import motionPortfolio from "../assets/motionPortfolio.png";
+import myPortfolio from "../assets/myPortfolio.png";
+import booxExchange from "../assets/bookExchange.png";
+import { FadeInSection, FadeRightSection } from "../UI/FramerAnimation";
 
 export default function Project() {
-    const { t } = useTranslation();
-    
-    const [project] = useState([
-        {
-            image: motionPortfolio,
-            name: t('projects.project1.name'),
-            brief: t('projects.project1.brief'),
-            repoLink: 'https://github.com/AtamanchukM/Friend-proj',
-            visitSite: 'https://atamanchukm.github.io/Friend-proj/'
-        },
-        {
-            image: penutrition,
-            name: t('projects.project2.name'),
-            brief: t('projects.project2.brief'),
-            repoLink: 'https://github.com/AtamanchukM/penutrition',
-            visitSite: 'https://atamanchukm.github.io/penutrition/'
-        },
-        {
-            image: myPortfolio,
-            name: t('projects.project3.name'),
-            brief: t('projects.project3.brief'),
-            repoLink: 'https://github.com/AtamanchukM/Atamanchuk',
-            visitSite: 'https://atamanchukm.github.io/Atamanchuk/'
-        },
-        {
-            image: todo,
-            name: t('projects.project4.name'),
-            brief: t('projects.project4.brief'),
-            repoLink: 'https://github.com/AtamanchukM/Todo',
-            visitSite: 'https://babazhaba.netlify.app/'
-        },
+  const { t } = useTranslation();
 
-    ])
+  const [project] = useState([
+    {
+      image: motionPortfolio,
+      name: t("projects.motionPortfolio.name"),
+      brief: t("projects.motionPortfolio.brief"),
+      repoLink: "https://github.com/AtamanchukM/Friend-proj",
+      visitSite: "https://atamanchukm.github.io/Friend-proj/",
+    },
 
-    const [openIndex, setOpenIndex] = useState<number | null>(null)
-    
-    return (
-        <section id='project' className='min-h-screen dark:bg-second-dark-bg dark:text-text-dark  flex  flex-col items-center  pt-30 pb-20'>
-            <FadeInSection>
+    {
+      image: myPortfolio,
+      name: t("projects.myPortfolio.name"),
+      brief: t("projects.myPortfolio.brief"),
+      repoLink: "https://github.com/AtamanchukM/Atamanchuk",
+      visitSite: "https://atamanchukm.github.io/Atamanchuk/",
+    },
+    {
+      image: booxExchange,
+      name: t("projects.booxExchange.name"),
+      brief: t("projects.booxExchange.brief"),
+      repoLink: "https://github.com/AtamanchukM/book-exchange",
+    },
+  ]);
 
-                <div className="max-w-7xl px-4 flex flex-col items-center">
-                    <h2 className='text-5xl text-center'>{t('projects.title')}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center mt-20">
-                        {project.map((item, index) => (
-                            <FadeRightSection key={index}>
-                                <div
-                                    className={`group relative overflow-hidden   ${index % 4 === 0 || index % 4 === 3 ? 'h-[400px]' : 'h-[300px]'}`}
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                >
-                                    <img
-                                        loading='lazy'
-                                        src={item.image}
-                                        alt={item.name}
-                                        className={`w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-30 
-                                            ${openIndex === index ? 'brightness-30 scale-105' : ''}`}
-                                    />
+  return (
+    <section
+      id="project"
+      className="flex flex-col items-center w-full min-h-screen py-20 m-auto max-w-7xl dark:bg-second-dark-bg dark:text-text-dark "
+    >
+      <FadeInSection>
+        <div className="w-full mx-auto ">
+          <h2 className="mb-20 text-5xl text-center">{t("projects.title")}</h2>
 
-                                    {/* Один спільний блок для hover і мобільного відкриття */}
-                                    <div
-                                        className={`absolute w-full z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 text-center text-white transition-all duration-300
-                                        ${openIndex === index ? 'block ' : 'hidden group-hover:block'}`}
-                                    >
-                                        <h3 className="text-2xl font-semibold mb-2">{item.name}</h3>
-                                        <p className='mb-6'>{item.brief}</p>
-                                        <a
-                                            href={item.repoLink}
-                                            className='p-3 mr-4 border border-[#D4C4A8] hover:bg-[#D4C4A8] transition duration-200 '
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {t('projects.viewOnGithub')}
-                                        </a>
-                                        <a 
-                                            href={item.visitSite}
-                                            className='p-3 border border-[#D4C4A8] hover:bg-[#D4C4A8] transition duration-200 '
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >{t('projects.visitSite')}</a>
-                                    </div>
-                                </div>
-                            </FadeRightSection>
-                        ))}
+          <div className="flex flex-col gap-10">
+            {project.map((item, index) => (
+              <FadeRightSection key={index}>
+                <div
+                  className={`flex flex-col ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } gap-8 items-center`}
+                >
+                  <div className="flex-2 ">
+                    <div className="relative w-full h-full overflow-hidden rounded-lg group ">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-105"
+                      />
                     </div>
+                  </div>
 
+                  {/* Text Content */}
+                  <div className="flex flex-col justify-center flex-1 gap-4">
+                    <h3 className="text-3xl font-bold">{item.name}</h3>
+                    <p className="text-lg text-gray-300">{item.brief}</p>
+                    <div className="flex gap-4">
+                      <a
+                        href={item.repoLink}
+                        className="px-6 py-2 bg-[#D4C4A8] text-black font-bold rounded hover:shadow-lg transition"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Code
+                      </a>
+                      {item.visitSite && (
+                        <a
+                          href={item.visitSite}
+                          className="px-6 py-2 border-2 border-[#D4C4A8] text-[#D4C4A8] font-bold rounded hover:bg-[#D4C4A8] hover:text-black transition"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-            </FadeInSection>
-
-        </section >
-    )
+              </FadeRightSection>
+            ))}
+          </div>
+        </div>
+      </FadeInSection>
+    </section>
+  );
 }
